@@ -6,22 +6,23 @@ public class UserDTO {
     private String fullName;
     private String billingAddress;
     private String login;
-    private String pass;
+    private String password;
     private String email;
     private String message = "";
 
-    public UserDTO(Integer id, String fullName, String login, String pass, String email, String billingAddress){
+    public UserDTO(Integer id, String fullName, String login, String password, String email, String billingAddress){
         this.id = id;
         this.fullName = fullName;
         this.login = login;
-        this.pass = pass;
+        this.password = password;
         this.email = email;
         this.billingAddress = billingAddress;
     }
 
     public UserDTO(String login, String pass){
         this.login = login;
-        this.pass = pass;
+        this.password = password
+        ;
     }
 
     public void setId(Integer id) {
@@ -44,8 +45,8 @@ public class UserDTO {
         return login;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
     public String getEmail() {

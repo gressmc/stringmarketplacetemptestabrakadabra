@@ -2,6 +2,8 @@ package grs.epam.data.controller;
 
 import grs.epam.data.dao.modelDAO.UserDAO;
 import grs.epam.data.dto.UserDTO;
+import grs.epam.data.model.User;
+import grs.epam.data.service.GenericService;
 import grs.epam.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,19 +15,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping(value = "/user")
-public class MainController {
+@RequestMapping(value = "/marketplace")
+public class MarketController {
 
-//    @Autowired
-//    private UserService userService;
 
     @Autowired
-    private UserDAO userDAO;
+    private GenericService userService;
 
     @RequestMapping
     public ModelAndView save(ModelAndView modelAndView) {
 //        modelAndView.setViewName("people");
-        return new ModelAndView("index", "advs", userDAO.getAll());
+        return new ModelAndView("index", "user", userService.findAll());
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)

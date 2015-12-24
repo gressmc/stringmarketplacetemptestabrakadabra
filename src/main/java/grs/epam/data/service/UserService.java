@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+@Service("userService")
 public class UserService implements GenericService<UserDTO> {
 
     @Autowired
@@ -38,7 +38,7 @@ public class UserService implements GenericService<UserDTO> {
             user.setLogin(dto.getLogin());
             user.setEmail(dto.getEmail());
             user.setBillingAddress(dto.getBillingAddress());
-            user.setPassword(dto.getPass());
+            user.setPassword(dto.getPassword());
             userDAO.persist(user);
             return toDTO(user);
         } else {
@@ -80,7 +80,7 @@ public class UserService implements GenericService<UserDTO> {
         User user = User.newBuilder()
                 .setUserFullName(dto.getFullName())
                 .setUserLogin(dto.getLogin())
-                .setUserPass(dto.getPass())
+                .setUserPass(dto.getPassword())
                 .setUserEmail(dto.getEmail())
                 .setUserAddress(dto.getBillingAddress())
                 .build();
