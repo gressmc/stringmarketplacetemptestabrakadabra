@@ -20,12 +20,12 @@ public class MarketController {
 
 
     @Autowired
-    private GenericService userService;
+    private GenericService itemService;
 
     @RequestMapping
     public ModelAndView save(ModelAndView modelAndView) {
 //        modelAndView.setViewName("people");
-        return new ModelAndView("index", "user", userService.findAll());
+        return new ModelAndView("index", "user", itemService.findAll());
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)

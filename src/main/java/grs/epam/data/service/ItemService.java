@@ -2,9 +2,11 @@ package grs.epam.data.service;
 
 
 import grs.epam.data.dto.ItemDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("itemService")
 public class ItemService implements GenericService<ItemDTO>{
 
     @Override
