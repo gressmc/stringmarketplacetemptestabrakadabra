@@ -17,6 +17,10 @@ public class UserService implements GenericService<UserDTO> {
     @Autowired
     private UserDAO userDAO;
 
+    public void setUserDAO(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
     @Transactional
     @Override
     public UserDTO create(UserDTO dto) {
@@ -34,7 +38,7 @@ public class UserService implements GenericService<UserDTO> {
             user.setLogin(dto.getLogin());
             user.setEmail(dto.getEmail());
             user.setBillingAddress(dto.getBillingAddress());
-            user.setPass(dto.getPass());
+            user.setPassword(dto.getPass());
             userDAO.persist(user);
             return toDTO(user);
         } else {
@@ -69,7 +73,7 @@ public class UserService implements GenericService<UserDTO> {
     }
 
     private UserDTO toDTO(User user) {
-        return new UserDTO(user.getId(), user.getFullName(), user.getLogin(), user.getPass(), user.getEmail(), user.getBillingAddress());
+        return new UserDTO(user.getId(), user.getFullName(), user.getLogin(), user.getPassword(), user.getEmail(), user.getBillingAddress());
     }
 
     private User toEntity(UserDTO dto) {

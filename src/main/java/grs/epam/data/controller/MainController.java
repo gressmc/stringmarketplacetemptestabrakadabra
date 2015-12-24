@@ -1,5 +1,6 @@
 package grs.epam.data.controller;
 
+import grs.epam.data.dao.modelDAO.UserDAO;
 import grs.epam.data.dto.UserDTO;
 import grs.epam.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +13,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = "/user")
 public class MainController {
 
 //    @Autowired
 //    private UserService userService;
 
+    @Autowired
+    private UserDAO userDAO;
+
     @RequestMapping
     public ModelAndView save(ModelAndView modelAndView) {
-        modelAndView.setViewName("home");
-        return modelAndView;
+//        modelAndView.setViewName("people");
+        return new ModelAndView("index", "advs", userDAO.getAll());
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)

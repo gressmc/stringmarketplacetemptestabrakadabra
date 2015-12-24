@@ -20,14 +20,14 @@ public class User extends AbstractModel<Integer> implements Identified<Integer> 
     private String billingAddress;
 
     private String login;
-    private String pass;
+    private String password;
     private String email;
-    private String message = "";
+//    private String message = "";
 
-    public User(String fullName, String login, String pass, String email, String billingAddress){
+    public User(String fullName, String login, String password, String email, String billingAddress){
         this.fullName = fullName;
         this.login = login;
-        this.pass = pass;
+        this.password = password;
         this.email = email;
         this.billingAddress = billingAddress;
     }
@@ -77,12 +77,12 @@ public class User extends AbstractModel<Integer> implements Identified<Integer> 
         this.login = login;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String pass) {
+        this.password = pass;
     }
 
     public String getEmail() {
@@ -93,13 +93,13 @@ public class User extends AbstractModel<Integer> implements Identified<Integer> 
         this.email = email;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
+//    public String getMessage() {
+//        return message;
+//    }
+//
+//    public void setMessage(String message) {
+//        this.message = message;
+//    }
 
     public static Builder newBuilder() {
         return new User().new Builder();
@@ -125,7 +125,7 @@ public class User extends AbstractModel<Integer> implements Identified<Integer> 
         }
 
         public Builder setUserPass(String pass) {
-            User.this.pass = pass;
+            User.this.password = pass;
             return this;
         }
 
