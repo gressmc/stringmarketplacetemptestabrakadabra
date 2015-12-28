@@ -13,6 +13,8 @@
     <!-- Use @Component annotations for bean definitions -->
     <context:component-scan base-package="grs.epam.data"/>
     <context:annotation-config/>
+    <context:load-time-weaver/>
+
     <!-- Add JPA support -->
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="loadTimeWeaver">
@@ -27,4 +29,6 @@
 
     <tx:annotation-driven transaction-manager="myTxManager"/>
 
+    <!-- Setting for security -->
+    <import resource="security.xml" />
 </beans>

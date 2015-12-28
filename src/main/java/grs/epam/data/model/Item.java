@@ -26,7 +26,7 @@ public class Item extends AbstractModel<Integer> implements Identified<Integer> 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
     private Set<Bid> bids;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "SELLER_ID")
     private User user;
 

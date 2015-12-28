@@ -13,10 +13,10 @@ public class Bid extends AbstractModel<Integer> implements Identified<Integer> {
     @Column(name="ID")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "BIDDER_ID")
     private User user;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "ITEM_ID")
     private Item item;
 

@@ -17,9 +17,13 @@ public class UserService implements GenericService<UserDTO> {
     @Autowired
     private UserDAO userDAO;
 
-    public void setUserDAO(UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
+
+    public void registration(){}
+    public void login(){}
+    public void logout(){}
+
+    private void errorClose(){}
+
 
     @Transactional
     @Override

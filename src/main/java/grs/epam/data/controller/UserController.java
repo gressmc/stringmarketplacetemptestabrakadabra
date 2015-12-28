@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/user")
+@RequestMapping(value = {"/user", "/login"})
 public class UserController {
 
 
@@ -17,9 +17,9 @@ public class UserController {
     private GenericService userService;
 
     @RequestMapping
-    public ModelAndView save(ModelAndView modelAndView) {
+    public ModelAndView login(ModelAndView modelAndView) {
 //        modelAndView.setViewName("people");
-        return new ModelAndView("index", "user", userService.findAll());
+        return new ModelAndView("login", "users", userService.findAll());
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)

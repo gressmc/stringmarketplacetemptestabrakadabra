@@ -22,7 +22,6 @@ public class User extends AbstractModel<Integer> implements Identified<Integer> 
     private String login;
     private String password;
     private String email;
-//    private String message = "";
 
     public User(String fullName, String login, String password, String email, String billingAddress){
         this.fullName = fullName;
@@ -92,14 +91,6 @@ public class User extends AbstractModel<Integer> implements Identified<Integer> 
     public void setEmail(String email) {
         this.email = email;
     }
-
-//    public String getMessage() {
-//        return message;
-//    }
-//
-//    public void setMessage(String message) {
-//        this.message = message;
-//    }
 
     public static Builder newBuilder() {
         return new User().new Builder();

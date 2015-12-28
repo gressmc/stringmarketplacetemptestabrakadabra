@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,7 +28,7 @@
             <td><b>Action</b></td>
         </tr>
         </thead>
-        <c:forEach items="${user}" var="user">
+        <c:forEach items="${users}" var="user">
             <tr>
                 <td>${user.id}</td>
                 <td>${user.login}</td>

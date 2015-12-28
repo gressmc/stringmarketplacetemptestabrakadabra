@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping(value = "/marketplace")
+@RequestMapping(value = "/market")
 public class MarketController {
 
 

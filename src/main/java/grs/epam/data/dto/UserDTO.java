@@ -19,10 +19,9 @@ public class UserDTO {
         this.billingAddress = billingAddress;
     }
 
-    public UserDTO(String login, String pass){
+    public UserDTO(String login, String password){
         this.login = login;
-        this.password = password
-        ;
+        this.password = password;
     }
 
     public void setId(Integer id) {

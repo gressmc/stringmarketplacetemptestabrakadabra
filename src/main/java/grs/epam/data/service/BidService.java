@@ -1,10 +1,15 @@
 package grs.epam.data.service;
 
+import grs.epam.data.dao.modelDAO.BidDAO;
 import grs.epam.data.dto.BidDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class BidService implements GenericService<BidDTO>{
+
+    @Autowired
+    private BidDAO bidDAO;
 
     @Override
     public BidDTO create(BidDTO dto) {
