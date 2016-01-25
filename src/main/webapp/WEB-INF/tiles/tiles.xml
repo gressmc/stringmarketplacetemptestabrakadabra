@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="BaseTemplate" template="/WEB-INF/views/templates/baseLayout.jsp">
+        <put-attribute name="title" value="MarketPlace Spring"/>
+        <put-attribute name="header" value="/WEB-INF/views/part/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/part/footer.jsp"/>
+        <put-list-attribute name="stylecss">
+            <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="scriptjs">
+            <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="market" extends="BaseTemplate">
+        <put-attribute name="title" value=" MarketPlace "/>
+        <put-attribute name="body" value="/WEB-INF/views/tiles/market.jsp"/>
+        <put-list-attribute name="stylecss" inherit="true">
+            <add-attribute value="/resources/css/style_table.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="scriptjs" inherit="true">
+            <add-attribute value="/resources/js/table.js"/>
+        </put-list-attribute>
+    </definition>
+
+
+    <definition name="login" extends="BaseTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/tiles/login.jsp"/>
+        <put-list-attribute name="stylecss" inherit="true">
+            <add-attribute value="/resources/css/style_login.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="scriptjs" inherit="true">
+            <add-attribute value="/resources/js/login.js"/>
+        </put-list-attribute>
+    </definition>
+
+
+    <definition name="edit" extends="BaseTemplate">
+        <put-attribute name="title" value=" Edit item | New item "/>
+        <put-attribute name="body" value="/WEB-INF/views/tiles/edit_item.jsp"/>
+        <put-list-attribute name="stylecss" inherit="true">
+            <add-attribute value="/resources/css/style_items.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="scriptjs" inherit="true">
+            <add-attribute value="/resources/js/items.js"/>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>
